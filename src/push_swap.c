@@ -56,6 +56,8 @@ static void				push_swap(t_ps *ps, size_t size)
 		return ;
 	else if (is_revsorted(ps->stacks[0]))
 		ps_revsort(ps);
+	else if (size <= 3)
+		ps_threesort(ps, 0, size);
 	else
 	{
 		part_size = ps_partition(ps, size);

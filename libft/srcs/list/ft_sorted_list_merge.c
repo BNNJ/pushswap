@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	add_node(t_list	*link, t_list *list)
+void	add_node(t_list *link, t_list *list)
 {
 	if (*list)
 	{
@@ -26,7 +26,7 @@ void	add_node(t_list	*link, t_list *list)
 }
 
 void	ft_sorted_list_merge(t_list **begin_list1,
-	t_list *begin_list2, int(*cmp)())
+	t_list *begin_list2, int (*cmp)())
 {
 	t_list	*new_list;
 	t_list	*tmp;

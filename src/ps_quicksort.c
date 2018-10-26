@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 /*
-** Helper functions to get the median and the minimum value of a list
+** Helper function to get the median of a list of values
 */
 
 static inline int		ps_get_median(t_ps *ps, uint8_t s, size_t size)

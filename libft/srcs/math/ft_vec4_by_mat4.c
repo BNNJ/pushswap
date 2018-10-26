@@ -18,7 +18,7 @@ t_vec4	ft_vec4_by_mat4(t_vec4 *v, t_mat4 *m)
 
 	victor.x = ft_vec4_scalprod(v, &m->x);
 	victor.y = ft_vec4_scalprod(v, &m->y);
-	victor.z = ft_vec4_scalprod(v, &m->z);;
-	victor.w = ft_vec4_scalprod(v, &m->w);;
+	victor.z = ft_vec4_scalprod(v, &m->z);
+	victor.w = ft_vec4_scalprod(v, &m->w);
 	return (victor);
 }
