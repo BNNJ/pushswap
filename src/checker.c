@@ -19,7 +19,7 @@
 ** or 0 if it's not.
 */
 
-static int	checker(t_ps *ps)
+static void	checker(t_ps *ps)
 {
 	char	*inst;
 
@@ -43,9 +43,9 @@ static int	checker(t_ps *ps)
 			ps_inst(ps, 2, REVROT);
 		else
 			ps_exit(ps, "Error\n", EXIT_SUCCESS);
+		ft_strdel(&inst);
 	}
-	return (ps->stacks[0]->size && is_sorted(ps->stacks[0])
-		&& !ps->stacks[1]->size);
+	ft_strdel(&inst);
 }
 
 static void	ps_count(t_ps *ps)
@@ -74,6 +74,11 @@ static void	ps_count(t_ps *ps)
 
 static void	ps_display(t_ps *ps, int argc, char **argv)
 {
+	if (ps->stacks[0]->size && is_sorted(ps->stacks[0])
+		&& !ps->stacks[1]->size)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 	if (ps->opt & F_VIEWER)
 		sdl_viewer(ps, argc, argv);
 	if (ps->opt & F_DETAILS)
@@ -96,8 +101,10 @@ int			main(int argc, char **argv)
 		if (!(parse_argv(argc, argv, &ps)))
 			ps_exit(&ps, "Error\n", EXIT_FAILURE);
 		if (a.size)
-			write(1, checker(&ps) ? "OK\n" : "KO\n", 3);
-		ps_display(&ps, argc, argv);
+		{
+			checker(&ps);
+			ps_display(&ps, argc, argv);
+		}
 		ps_exit(&ps, NULL, EXIT_SUCCESS);
 	}
 	return (EXIT_SUCCESS);
