@@ -85,6 +85,13 @@ static void	ps_display(t_ps *ps, int argc, char **argv)
 		ps_count(ps);
 }
 
+static inline void	ps_usage(void)
+{
+	ft_printf("usage:\t./checker [-d/-v] [values]\n");
+	ft_printf("\t-d : details, prints extra info at the end\n");
+	ft_printf("\t-v : enables viewer\n");
+}
+
 int			main(int argc, char **argv)
 {
 	t_ps	ps;
@@ -107,5 +114,7 @@ int			main(int argc, char **argv)
 		}
 		ps_exit(&ps, NULL, EXIT_SUCCESS);
 	}
+	else
+		ps_usage();
 	return (EXIT_SUCCESS);
 }

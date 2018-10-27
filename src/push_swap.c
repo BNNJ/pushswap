@@ -75,8 +75,13 @@ static inline void		ps_display(t_ps *ps, int argc, char **argv)
 	{
 		read_stack(ps);
 		ft_printf("sorted in %lu instructions\n", ps->op->size);
-		fflush(stdout);
 	}
+}
+
+static inline void		ps_usage(void)
+{
+	ft_printf("usage:\t./push_swap [-g/-v] [values]\n");
+	ft_printf("\t-g : debug mode\n\t-v : enables viewer\n");
 }
 
 int						main(int argc, char **argv)
@@ -101,5 +106,7 @@ int						main(int argc, char **argv)
 		}
 		ps_exit(&ps, NULL, EXIT_SUCCESS);
 	}
+	else
+		ps_usage();
 	return (EXIT_SUCCESS);
 }

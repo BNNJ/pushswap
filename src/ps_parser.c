@@ -24,7 +24,7 @@ void		ps_get_options(t_ps *ps, char **argv)
 	int		opt;
 
 	i = 1;
-	while (*argv[i] == '-' && (argv[i][1] <= '0' || argv[i][1] >= '9'))
+	while (*argv[i] == '-' && (argv[i][1] < '0' || argv[i][1] > '9'))
 	{
 		if ((opt = ft_findchar("gvd", argv[i][1])) >= 0)
 			ps->opt |= (1 << opt);

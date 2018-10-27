@@ -12,17 +12,6 @@
 
 #include "push_swap.h"
 
-static inline void	ps_putopstr(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		++len;
-	write(1, str, len);
-	write(1, "\n", 1);
-}
-
 void				read_oplist(t_ps *ps)
 {
 	t_psnode	*tmp;
@@ -45,7 +34,7 @@ void				read_oplist(t_ps *ps)
 	i = ps->op->size;
 	while (i)
 	{
-		ps_putopstr(opstr[tmp->val]);
+		ft_printf("%s\n", opstr[tmp->val]);
 		tmp = tmp->prev;
 		--i;
 	}

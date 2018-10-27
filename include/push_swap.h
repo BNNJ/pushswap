@@ -77,6 +77,9 @@ typedef struct	s_sdl
 ** ps_parser.c
 */
 
+void begin (void) __attribute__((constructor));
+void end (void) __attribute__((destructor));
+
 int				parse_argv(int argc, char **argv, t_ps *ps);
 void			ps_get_options(t_ps *ps, char **argv);
 
