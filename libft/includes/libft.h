@@ -53,6 +53,12 @@ typedef struct			s_file_rd
 # define RAD M_PI / 180
 # define DEG 180 / M_PI
 
+typedef struct			s_point
+{
+	int		x;
+	int		y;
+}						t_point;
+
 typedef struct			s_vec3
 {
 	double	x;

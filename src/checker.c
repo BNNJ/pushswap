@@ -69,6 +69,7 @@ static void	ps_count(t_ps *ps)
 		count_table[6], count_table[7], count_table[8]);
 	ft_printf("RRA : %d\nRRB : %d\nRRR : %d\n",
 		count_table[9], count_table[10], count_table[11]);
+	ft_printf("total : %lu instructions\n", ps->op->size);
 }
 
 static void	ps_display(t_ps *ps, int argc, char **argv)

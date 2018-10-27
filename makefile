@@ -1,5 +1,5 @@
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g
 
 SRC_DIR		=	./src
 
@@ -17,6 +17,7 @@ SRCS		=	checker.c			\
 				ps_opti.c			\
 				ps_viewer.c			\
 				ps_controls.c		\
+				ps_viewertext.c		\
 				ps_minilib.c
 
 OBJ_DIR		=	./obj
@@ -35,7 +36,8 @@ OBJS_PS		=	push_swap.o			\
 				ps_minisort.o		\
 				ps_opti.o			\
 				ps_viewer.o			\
-				ps_controls.o
+				ps_controls.o		\
+				ps_viewertext.o
 
 OBJS_CH		=	checker.o			\
 				ps_parser.o			\
@@ -45,7 +47,8 @@ OBJS_CH		=	checker.o			\
 				ps_oplist.o			\
 				ps_minilib.o		\
 				ps_viewer.o			\
-				ps_controls.o	
+				ps_controls.o		\
+				ps_viewertext.o
 
 INC_DIR		=	./include
 INC			=	$(INC_DIR)/push_swap.h
@@ -60,10 +63,11 @@ FTPF_INC	=	$(FTPF_DIR)/include
 
 SDL_DIR		=	./sdl2
 SDL			=	$(SDL_DIR)/lib/libSDL2.a
+TTF			=	$(SDL_DIR)/lib/libSDL2_ttf.a
 SDL_INC		=	$(SDL_DIR)/include/SDL2
 
 INC_FLAGS	=	-I$(INC_DIR) -I$(LIBFT_INC) -I$(SDL_INC) -I$(FTPF_INC)
-LINK_FLAGS	=	-L$(LIBFT_DIR) -lft -L$(SDL_DIR)/lib -lSDL2 \
+LINK_FLAGS	=	-L$(LIBFT_DIR) -lft -L$(SDL_DIR)/lib -lSDL2 -lSDL2_ttf	\
 				-L$(FTPF_DIR) -lftprintf
 
 all:			push_swap checker

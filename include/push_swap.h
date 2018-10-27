@@ -23,7 +23,7 @@
 # define F_DETAILS 4
 # define F_SAVE 64
 
-# define WIDTH 2300
+# define WIDTH 2400
 # define HEIGHT 1200
 
 # include "ft_printf.h"
@@ -34,6 +34,7 @@
 # include <limits.h>
 # include <stdint.h>
 # include "SDL.h"
+# include "SDL_ttf.h"
 
 typedef struct	s_psnode
 {
@@ -65,7 +66,9 @@ typedef struct	s_sdl
 {
 	SDL_Window		*win;
 	SDL_Renderer	*rend;
-	SDL_Texture		*txtr;
+	SDL_Surface		*surface;
+	SDL_Texture		*texture;
+	TTF_Font		*font;
 	uint32_t		delay;
 	uint8_t			state;
 }				t_sdl;
@@ -116,13 +119,15 @@ void			ps_revert_op(t_stack *op);
 void			ps_opti_oplist(t_ps *ps);
 
 /*
-** ps_viewer.c && ps_controls.c
+** ps_viewer.c && ps_controls.c && ps_viewertext.c
 */
 
 void			sdl_viewer(t_ps *ps, int argc, char **argv);
 t_psnode		*sdl_controls(t_ps *ps, t_psnode *op, t_sdl *sdl,
 	size_t *opsize);
 void			sdl_exit(t_ps *ps, t_sdl *sdl, uint8_t status);
+void			ps_draw_controls(t_ps *ps, t_sdl *sdl);
+void			ps_draw_op(t_ps *ps, t_sdl *sdl, t_psnode *op, size_t size);
 
 /*
 ** ps_init_exit.c
