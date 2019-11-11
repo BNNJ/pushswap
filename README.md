@@ -74,7 +74,3 @@ will generate a list of 100 values, from 0 to 99, in a random order.
 |escape| quit|
 |left/right| step backward/forward|
 |up/down| faster/slower|
-
-## how does it work ?
-
-
