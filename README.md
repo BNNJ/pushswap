@@ -47,28 +47,15 @@ foo@bar:~$ yay -S sdl2 sdl2_ttf
 
 Run with:
 ```console
-foo@bar:~$ ./push_swap [options] \<list of integers\>
-foo@bar:~$ ./checker [options] \<list of integers\>
+foo@bar:~$ ./push_swap [options] <list of integers>
+foo@bar:~$ ./checker [options] <list of integers>
 ```
 
-The list of integers can be passed as one or multiple arguments.
-
-Examples:
+The list of integers can be passed as one or multiple arguments. For examples:
 ```console
 foo@bar:~$ ./push_swap 1 3 "2 5" 4 7 | ./checker "1 3 2" 5 "4 7"
 foo@bar:~$ arg="5 1 4 2 3"; ./push_swap $arg | ./checker $arg
 ```
-
-Useful tip: Generate a randomized list with a simple script:
-```console
-foo@bar:~$ arg=\`ruby -e "puts (X..Y).to_a.shuffle.join(' ')"\`
-```
-Where X and Y are the lower and upper bounds of the list. For example:
-
-```console
-foo@bar:~$ ruby -e "puts (0..99).to_a.shuffle.join(' ')"
-```
-Will generate a list of 100 values, from 0 to 99, in a random order.
 
 |push_swap options|effect|
 |-----------------|------|
@@ -87,3 +74,14 @@ Will generate a list of 100 values, from 0 to 99, in a random order.
 |escape| quit|
 |left/right| step backward/forward|
 |up/down| faster/slower|
+
+Useful tip: Generate a randomized list with a simple script:
+```console
+foo@bar:~$ arg=`ruby -e "puts (X..Y).to_a.shuffle.join(' ')"`
+```
+Where X and Y are the lower and upper bounds of the list. For example:
+
+```console
+foo@bar:~$ ruby -e "puts (0..99).to_a.shuffle.join(' ')"
+```
+Will generate a list of 100 values, from 0 to 99, in a random order.
