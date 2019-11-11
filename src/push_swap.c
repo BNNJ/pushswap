@@ -14,7 +14,7 @@
 
 /*
 ** Special partitioning for the first iteration, when stack B is empty.
-** the partition is divided again in two sub-partitions after comparing
+** the partition is divided again into two sub-partitions after comparing
 ** the values to a sub-median. The lowest half of the partition is thus
 ** sent to the bottom of the stack.
 */

@@ -32,22 +32,22 @@ int			add_node(t_stack *s, int v)
 ** The node isn't necessarily on top of the stack, contrary to ft_pop.
 */
 
-t_psnode	*remove_node(t_stack *s, t_psnode *nod)
+t_psnode	*remove_node(t_stack *s, t_psnode *node)
 {
 	t_psnode	*tmp;
 
 	if (s->size >= 1)
 	{
-		tmp = nod->next;
-		nod->prev->next = nod->next;
-		nod->next->prev = nod->prev;
-		free(nod);
+		tmp = node->next;
+		node->prev->next = node->next;
+		node->next->prev = node->prev;
+		free(node);
 		--s->size;
 		return (tmp);
 	}
 	else if (s->size == 1)
 	{
-		free(nod);
+		free(node);
 		s->top = NULL;
 		s->size = 0;
 		return (NULL);
@@ -57,7 +57,7 @@ t_psnode	*remove_node(t_stack *s, t_psnode *nod)
 }
 
 /*
-** Removes the top element of a s and returns it
+** Removes the top element of a stack and returns it
 */
 
 t_psnode	*ft_pop(t_stack *s)

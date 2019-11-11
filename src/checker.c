@@ -12,11 +12,15 @@
 
 #include "push_swap.h"
 
+
 /*
+** Checker is a simple verification program for pushswap.
+**
 ** Reads the standard input line by line,
 ** and executes the instruction read.
-** Returns 1 if the stack is sorted after execution of the instructions,
-** or 0 if it's not.
+** Write OK to the standard input if the stack is sorted after
+** execution of the instructions,
+** or KO if it's not.
 */
 
 static void	checker(t_ps *ps)

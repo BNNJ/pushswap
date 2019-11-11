@@ -12,6 +12,14 @@
 
 #include "push_swap.h"
 
+/*
+** Processes the instructions list to try and make it shorter.
+** It does so by removing two consecutive opposite instructions,
+** or combining instructions that can be coupled.
+** For exemple, if an RA instruction follows an RB instruction,
+** they can be conbined into a single RR instruction.
+*/
+
 static t_psnode			*ps_optipush(t_ps *ps, t_psnode *cur, t_psnode *end)
 {
 	if (cur->prev->val - cur->val == 1 || cur->val - cur->prev->val == 1)

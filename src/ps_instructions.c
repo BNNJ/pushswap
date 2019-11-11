@@ -12,6 +12,14 @@
 
 #include "push_swap.h"
 
+/*
+** The four stack instructions allowed :
+** Swap : swaps the top two elements of a stack
+** Push : pop the top element of a stack and pushs it to the other one
+** rot : puts the top element of a stack at the bottom
+** revrot : puts the bottom element of a stack at the top
+*/
+
 static void	ps_swap(t_ps *ps, uint8_t stack)
 {
 	t_psnode	*tmp;
@@ -73,6 +81,15 @@ static void	ps_revrot(t_ps *ps, uint8_t stack)
 		s->top = s->top->next;
 	}
 }
+
+/*
+** Wrapper around those instructions, to make instruction calling simpler.
+** s : the stack on which the instruction is to be applied
+** instcode : the instruction code as defined in the header file
+**
+** If the F_SAVE flag is set, the instruction is not only executed,
+** but also added to the instruction list.
+*/
 
 void		ps_inst(t_ps *ps, uint8_t s, int instcode)
 {

@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+/*
+** Frees everything that needs to be freed before exeiting the program
+*/
+
 void	ps_exit(t_ps *ps, char *exit_msg, int exit_status)
 {
 	size_t	len;
@@ -31,6 +35,10 @@ void	ps_exit(t_ps *ps, char *exit_msg, int exit_status)
 		ps_free_stack(ps->op);
 	exit(exit_status);
 }
+
+/*
+** Initialization of the two stacks, and the instructions list.
+*/
 
 void	ps_init(t_ps *ps, t_stack *a, t_stack *b, t_stack *op)
 {

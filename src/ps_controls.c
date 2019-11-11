@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+/*
+** Handles the controls of the viewer.
+*/
+
 static t_psnode	*forward(t_ps *ps, t_psnode *op, t_sdl *sdl, size_t *opsize)
 {
 	sdl->state = 0;
