@@ -43,8 +43,8 @@ They're most likely available through your package manager:\
 
 ## usage
 
-\> ./push_swap [options] <list of integers>\
-\> ./checker [options] <list of integers>
+\> ./push_swap [options] \<list of integers\>\
+\> ./checker [options] \<list of integers\>
 
 The list of integers can be passed as one or multiple arguments.
 
