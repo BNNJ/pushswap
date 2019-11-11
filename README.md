@@ -35,9 +35,10 @@ ATTENTION: This program uses sdl2 and sdl2_ttf libraries for its graphical inter
 Make sure to install them before compiling.\
 They're most likely available through your package manager:\
 \> yay -S sdl2 sdl2_ttf\
-\> sudo apt-get install libsdl2-2.0 libsdl2-ttf
+\> sudo apt-get install libsdl2-2.0 libsdl2-ttf\
+...
 
-[sdl2](https://wiki.libsdl.org/Installation)
+[sdl2 installation details](https://wiki.libsdl.org/Installation)
 
 
 ## usage
