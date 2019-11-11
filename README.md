@@ -51,11 +51,12 @@ foo@bar:~$ ./push_swap [options] <list of integers>
 foo@bar:~$ ./checker [options] <list of integers>
 ```
 
-The list of integers can be passed as one or multiple arguments. For examples:
+Examples:
 ```console
 foo@bar:~$ ./push_swap 1 3 "2 5" 4 7 | ./checker "1 3 2" 5 "4 7"
 foo@bar:~$ arg="5 1 4 2 3"; ./push_swap $arg | ./checker $arg
 ```
+The list of integers can be passed as one or multiple arguments. 
 
 |push_swap options|effect|
 |-----------------|------|
