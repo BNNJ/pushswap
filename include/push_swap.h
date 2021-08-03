@@ -13,15 +13,28 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+/*
+** Instructions codes
+** To be used as an argument to the instruction wrapper ps_inst
+*/
+
 # define PUSH 0
 # define SWAP 1
 # define ROT 2
 # define REVROT 3
 
+/*
+** option flags
+*/
+
 # define F_DEBUG 1
 # define F_VIEWER 2
 # define F_DETAILS 4
 # define F_SAVE 64
+
+/*
+** Viewer window size constants
+*/
 
 # define WIDTH 1920
 # define HEIGHT 1040
@@ -34,6 +47,19 @@
 # include <SDL2/SDL.h>
 # include <SDL2/SDL_ttf.h>
 
+/*
+** The basic node element.
+** val : the value stored in the node
+** idx : The linearized value, or in other words its final place
+** 		in the sorted list. Makes finding medians and sorting much easier.
+**
+** For disgusting reasons, this structure has also been reused to build
+** the instructions list, in which case :
+** val : the instruction
+** idx : The opposite instruction, ie the instruction to apply
+** 		to reverse the instruction stored in val.
+*/
+
 typedef struct	s_psnode
 {
 	int				val;
@@ -41,6 +67,11 @@ typedef struct	s_psnode
 	struct s_psnode	*prev;
 	struct s_psnode	*next;
 }				t_psnode;
+
+/*
+** Stacks are represented as a circular doubly linked list, to make
+** rotation instructions easier.
+*/
 
 typedef struct	s_stack
 {

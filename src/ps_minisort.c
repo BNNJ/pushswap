@@ -60,7 +60,7 @@ void				ps_threesort(t_ps *ps, uint8_t s, size_t size)
 
 /*
 ** Sorts A for partitions of size 3 or less.
-** Best case is 0 instructions for an already aorted partition,
+** Best case is 0 instructions for an already sorted partition,
 ** worst case is 5 instructions for revsorted paritions.
 */
 
