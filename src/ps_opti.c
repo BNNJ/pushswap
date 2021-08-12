@@ -39,14 +39,14 @@ static t_psnode			*ps_optipush(t_ps *ps, t_psnode *cur, t_psnode *end)
 
 static t_psnode			*ps_optiswap(t_ps *ps, t_psnode *cur, t_psnode *end)
 {
-	if ((cur->val == SWAP && cur->prev->val == SWAP + 1)
-		|| (cur->val == SWAP + 1 && cur->prev->val == SWAP))
+	if ((cur->val == SWAP * 3 && cur->prev->val == SWAP * 3 + 1)
+		|| (cur->val == SWAP * 3 + 1 && cur->prev->val == SWAP * 3))
 	{
 		remove_node(ps->op, cur->prev);
-		cur->val = SWAP + 2;
+		cur->val = SWAP * 3 + 2;
 		return (cur->prev);
 	}
-	else if (cur->val == cur->prev->val && cur->val != SWAP + 2)
+	else if (cur->val == cur->prev->val && cur->val != SWAP * 3 + 2)
 	{
 		remove_node(ps->op, cur->prev);
 		cur = remove_node(ps->op, cur);
