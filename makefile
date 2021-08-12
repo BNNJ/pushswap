@@ -61,12 +61,16 @@ FTPF_DIR	=	./ft_printf
 FTPF		=	$(FTPF_DIR)/libftprintf.a
 FTPF_INC	=	$(FTPF_DIR)/include
 
-SDL_DIR		=	./sdl2
-SDL			=	$(SDL_DIR)/lib/libSDL2.a
-SDL_INC		=	$(SDL_DIR)/include/SDL2
+# SDL_DIR		=	./sdl2
+# SDL			=	$(SDL_DIR)/lib/libSDL2.a
+# SDL_INC		=	$(SDL_DIR)/include/SDL2
 
-INC_FLAGS	=	-I$(INC_DIR) -I$(LIBFT_INC) -I$(SDL_INC) -I$(FTPF_INC)
-LINK_FLAGS	=	-L$(LIBFT_DIR) -lft -L$(SDL_DIR)/lib -lSDL2	-lSDL2_ttf \
+# INC_FLAGS	=	-I$(INC_DIR) -I$(LIBFT_INC) -I$(SDL_INC) -I$(FTPF_INC)
+# LINK_FLAGS	=	-L$(LIBFT_DIR) -lft -L$(SDL_DIR)/lib -lSDL2	-lSDL2_ttf \
+# 				-L$(FTPF_DIR) -lftprintf
+
+INC_FLAGS	=	-I$(INC_DIR) -I$(LIBFT_INC) -I$(FTPF_INC)
+LINK_FLAGS	=	-L$(LIBFT_DIR) -lft -lSDL2 -lSDL2_ttf \
 				-L$(FTPF_DIR) -lftprintf
 
 all:			push_swap checker
